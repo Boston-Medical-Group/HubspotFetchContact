@@ -1,5 +1,5 @@
 {
-  "name": "HubspotFetchContact",
+  "name": "hubspot-fetch-contact-serverless",
   "version": "0.0.0",
   "private": true,
   "scripts": {
