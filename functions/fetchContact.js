@@ -7,7 +7,8 @@ exports.handler = function (context, event, callback) {
     crmid: '',
     firstname: '',
     lastname: '',
-    fullname: ''
+    fullname: '',
+    lifecyclestage: 'lead'
   };
   let from = event.from;
 
@@ -30,6 +31,7 @@ exports.handler = function (context, event, callback) {
         result.firstname = `${contact.properties.firstname.value}`;
         result.lastname = `${contact.properties.lastname.value}`;
         result.fullname = `${contact.properties.firstname.value ?? ''} ${contact.properties.lastname.value ?? ''}`;
+        result.lifecyclestage = `${contact,properties?.lifecyclestage?.value ?? 'lead'}`;
         if (result.fullname.trim() == '') {
           result.fullname = 'Customer'
         }
